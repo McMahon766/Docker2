@@ -1,0 +1,16 @@
+services:
+  - type: web
+    name: n8n-with-ffmpeg
+    env: docker
+    dockerfilePath: ./Dockerfile
+    startCommand: n8n start
+    envVars:
+      - key: N8N_BASIC_AUTH_ACTIVE
+        value: true
+      - key: N8N_BASIC_AUTH_USER
+        value: admin
+      - key: N8N_BASIC_AUTH_PASSWORD
+        value: Victor
+    ports:
+      - port: 5678
+        protocol: TCP
